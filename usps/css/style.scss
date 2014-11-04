@@ -1,10 +1,9 @@
 body{
 	background-color: teal;
+	header{
+		background-color: hsl(202, 91%, 87%);
+	}
 }
-header{
-	background-color: hsl(202, 91%, 87%);
-}
-
 /**
  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
  * http://cssreset.com
@@ -51,6 +50,7 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+
 }
 .clearfix:before,
 .clearfix:after{
@@ -59,43 +59,56 @@ table {
 	background-color: red;
 	clear: both;
 }
-
+$var: hsl(202, 91%, 87%);
 body{
-	background-color: teal;
-}
-header img{
-	width: 250px;
-}
-header ul:before,
-header ul:after;{
-	content: "";
-	display: block;
-	
-	background-color: red;
-	clear: both;
-}
-header ul:after{
-	content: "";
-	display: block;
-	
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	font-size: 100%;
 	background-color: red;
 }
-header li{
-	display: inline;
-	width: 25%;
-	float:left;
+header{
+	background-color: $var;
+	overflow: hidden;
+	img{
+		width: 250px;
+		margin: 10px auto;
+		display: block;
+		background-color: white;
+		padding: 10px;
+		border-radius: 3px;
+	}
+	ul{
+		padding:10px;
+	}
+	li{
+		display: inline-block;
+		width: 50%;
+		float: left;
+		text-align: center;
+		a{
+			text-decoration: none;
+			color: darker($var, 20%);
+			&:hover{
+				color: darken($var, 40%)
+			}
+			
 
+		}
+	}
 }
 #hero{
 	height: 200px;
 	background-image: url("../img/sky.jpg");
 	background-size: cover;
 	background-attachment: fixed;
+}	
+main{ 
+	img{
+		width: 25%
+	}
+	article{
+		width: 75%;
+		float: right;
+	}
 }
-main img{
-	width: 25%;
-}
-main article{
-	width: 75%;
-	float: right;
-}
+
+
